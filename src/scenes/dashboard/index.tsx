@@ -39,6 +39,36 @@ const Dashboard = (): JSX.Element => {
           </Button>
         </Box>
       </Box>
+
+      <Box
+        display='grid'
+        gridTemplateColumns='repeat(12, 1fr)'
+        gridAutoRows='140px'
+        gap='20px'
+      >
+        {/* ROW 1 */}
+        <Box
+          gridColumn='span 3'
+          bgcolor={colors.primary[400]}
+          display='flex'
+          alignItems='center'
+          justifyContent='center'
+        >
+          <StatBox
+            title='12,361'
+            subtitle='Email sent'
+            progress='0.75'
+            increase='+14%'
+            icon={
+              <EmailIcon
+                sx={{ color: colors.greenAccent[600], fontSize: '26px' }}
+              />
+            }
+          >
+
+          </StatBox>
+        </Box>
+      </Box>
     </Box>
   )
 }
