@@ -7,6 +7,10 @@ import Topbar from './scenes/global/Topbar'
 import { Routes } from 'react-router'
 import { Route } from 'react-router-dom'
 import Dashboard from './scenes/dashboard'
+import Bar from './scenes/bar'
+import Calendar from './scenes/calendar'
+import Contacts from './scenes/contacts'
+import FAQ from './scenes/faq'
 
 function App (): JSX.Element {
   const [theme, colorMode] = useMode()
@@ -23,6 +27,10 @@ function App (): JSX.Element {
               <Topbar setIsSidebar={setIsSidebar}/>
               <Routes>
                 <Route path='/' element={<Dashboard />} />
+                <Route path='/bar' element={<Bar />} />
+                <Route path="/contacts" element={<Contacts />} />
+                <Route path='/calendar' element={<Calendar />} />
+                <Route path="/faq" element={<FAQ />} />
               </Routes>
             </main>
           </div>
