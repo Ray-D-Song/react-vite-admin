@@ -6,7 +6,7 @@ import { tokens } from '../theme'
 import { mockGeographyData as data } from '../data/mockData'
 
 interface GeographyChartProps {
-  isDashboard: boolean
+  isDashboard?: boolean
 }
 
 const GeographyChart = ({ isDashboard = false }: GeographyChartProps): JSX.Element => {

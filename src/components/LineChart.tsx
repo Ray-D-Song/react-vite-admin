@@ -6,7 +6,7 @@ import { ResponsiveLine } from '@nivo/line'
 
 interface LineChartProps {
   isCustomLineColors?: boolean
-  isDashboard: boolean
+  isDashboard?: boolean
 }
 
 const LineChart = ({ isCustomLineColors = false, isDashboard = false }: LineChartProps): JSX.Element => {
