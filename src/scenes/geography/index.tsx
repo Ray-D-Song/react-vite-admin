@@ -1,10 +1,10 @@
-import React from 'react'
+import React, { ReactElement } from 'react'
 import { Box, useTheme } from '@mui/material'
 import GeographyChart from '../../components/GeographyChart'
 import Header from '../../components/Header'
 import { tokens } from '../../theme'
 
-const Geography = (): JSX.Element => {
+const Geography = (): ReactElement => {
   const theme = useTheme()
   const colors = tokens(theme.palette.mode)
   return (

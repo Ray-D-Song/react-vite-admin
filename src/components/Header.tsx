@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { ReactElement } from 'react'
 import { Box, Typography, useTheme } from '@mui/material'
 import { tokens } from '../theme'
 
@@ -7,7 +7,7 @@ interface HeaderProps {
   subtitle: string
 }
 
-const Header = (props: HeaderProps): JSX.Element => {
+const Header = (props: HeaderProps): ReactElement => {
   const theme = useTheme()
   const colors = tokens(theme.palette.mode)
   return (

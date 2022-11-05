@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { ReactElement } from 'react'
 import { Box, Typography, useTheme } from '@mui/material'
 import { DataGrid } from '@mui/x-data-grid'
 import { tokens } from '../../theme'
@@ -14,7 +14,7 @@ interface RowType {
   }
 }
 
-const Team = (): JSX.Element => {
+const Team = (): ReactElement => {
   const theme = useTheme()
   const colors = tokens(theme.palette.mode)
   const columns = [

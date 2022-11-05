@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { ReactElement } from 'react'
 import { Box, useTheme } from '@mui/material'
 import Header from '../../components/Header'
 import Accordion from '@mui/material/Accordion'
@@ -8,7 +8,7 @@ import Typography from '@mui/material/Typography'
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
 import { tokens } from '../../theme'
 
-const FAQ = (): JSX.Element => {
+const FAQ = (): ReactElement => {
   const theme = useTheme()
   const colors = tokens(theme.palette.mode)
   return (

@@ -12,9 +12,9 @@ import GeographyChart from '../../components/GeographyChart'
 import BarChart from '../../components/BarChart'
 import StatBox from '../../components/StatBox'
 import ProgressCircle from '../../components/ProgressCircle'
-import React from 'react'
+import React, { ReactElement } from 'react'
 
-const Dashboard = (): JSX.Element => {
+const Dashboard = (): ReactElement => {
   const theme = useTheme()
   const colors = tokens(theme.palette.mode)
 

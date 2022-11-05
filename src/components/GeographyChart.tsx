@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { ReactElement } from 'react'
 import { useTheme } from '@mui/material'
 import { ResponsiveChoropleth } from '@nivo/geo'
 import { geoFeatures } from '../data/mockGeofeatures'
@@ -9,7 +9,7 @@ interface GeographyChartProps {
   isDashboard?: boolean
 }
 
-const GeographyChart = ({ isDashboard = false }: GeographyChartProps): JSX.Element => {
+const GeographyChart = ({ isDashboard = false }: GeographyChartProps): ReactElement => {
   const theme = useTheme()
   const colors = tokens(theme.palette.mode)
   return (

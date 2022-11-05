@@ -1,7 +1,7 @@
 import { Box, Typography, useTheme } from '@mui/material'
 import { tokens } from '../theme'
 import ProgressCircle from './ProgressCircle'
-import React from 'react'
+import React, { ReactElement } from 'react'
 
 interface StatBoxProps {
   title: string
@@ -11,7 +11,7 @@ interface StatBoxProps {
   icon: React.ReactNode
 }
 
-const StatBox = (props: StatBoxProps): JSX.Element => {
+const StatBox = (props: StatBoxProps): ReactElement => {
   const theme = useTheme()
   const colors = tokens(theme.palette.mode)
 

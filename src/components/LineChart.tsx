@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { ReactElement } from 'react'
 import { useTheme } from '@mui/material'
 import { tokens } from '../theme'
 import { mockLineData as data } from '../data/mockData'
@@ -9,7 +9,7 @@ interface LineChartProps {
   isDashboard?: boolean
 }
 
-const LineChart = ({ isCustomLineColors = false, isDashboard = false }: LineChartProps): JSX.Element => {
+const LineChart = ({ isCustomLineColors = false, isDashboard = false }: LineChartProps): ReactElement => {
   const theme = useTheme()
   const colors = tokens(theme.palette.mode)
 

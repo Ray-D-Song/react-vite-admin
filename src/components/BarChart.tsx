@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { ReactElement } from 'react'
 import { useTheme } from '@mui/material'
 import { ResponsiveBar } from '@nivo/bar'
 import { tokens } from '../theme'
@@ -8,7 +8,7 @@ interface BarCharProps {
   isDashboard?: boolean
 }
 
-const BarChart = ({ isDashboard = false }: BarCharProps): JSX.Element => {
+const BarChart = ({ isDashboard = false }: BarCharProps): ReactElement => {
   const theme = useTheme()
   const colors = tokens(theme.palette.mode)
 

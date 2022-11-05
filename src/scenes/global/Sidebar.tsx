@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, ReactElement } from 'react'
 import { ProSidebar, Menu, MenuItem } from 'react-pro-sidebar'
 import { Box, IconButton, Typography, useTheme } from '@mui/material'
 import { Link } from 'react-router-dom'
@@ -20,7 +20,7 @@ import MapOutlinedIcon from '@mui/icons-material/MapOutlined'
 interface ItemProps {
   title: string
   to: string
-  icon: JSX.Element
+  icon: ReactElement
   selected: string
   setSelected: Function
 }
@@ -29,7 +29,7 @@ interface SidebarProps {
   isSiderbar: boolean
 }
 
-const Item = ({ title, to, icon, selected, setSelected }: ItemProps): JSX.Element => {
+const Item = ({ title, to, icon, selected, setSelected }: ItemProps): ReactElement => {
   const theme = useTheme()
   const colors = tokens(theme.palette.mode)
   return (
@@ -47,7 +47,7 @@ const Item = ({ title, to, icon, selected, setSelected }: ItemProps): JSX.Elemen
   )
 }
 
-const Sidebar = (props: SidebarProps): JSX.Element => {
+const Sidebar = (props: SidebarProps): ReactElement => {
   const theme = useTheme()
   const colors = tokens(theme.palette.mode)
   const [isCollapsed, setIsCollapsed] = useState(false)

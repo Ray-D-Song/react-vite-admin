@@ -1,6 +1,6 @@
 import { ThemeProvider } from '@emotion/react'
 import { CssBaseline } from '@mui/material'
-import React, { useState } from 'react'
+import React, { useState, ReactElement } from 'react'
 import Sidebar from './scenes/global/Sidebar'
 import { ColorModeContext, useMode } from './theme'
 import Topbar from './scenes/global/Topbar'
@@ -18,12 +18,11 @@ import Pie from './scenes/pie'
 import Team from './scenes/team'
 import Line from './scenes/line'
 
-function App (): JSX.Element {
+function App (): ReactElement {
   const [theme, colorMode] = useMode()
   const [isSidebar, setIsSidebar] = useState(true)
 
   return (
-    // @ts-expect-error
     <ColorModeContext.Provider value={colorMode}>
       <ThemeProvider theme={theme}>
         <CssBaseline/>

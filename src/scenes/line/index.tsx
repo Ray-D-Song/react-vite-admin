@@ -1,9 +1,9 @@
-import React from 'react'
+import React, { ReactElement } from 'react'
 import { Box } from '@mui/material'
 import Header from '../../components/Header'
 import LineChart from '../../components/LineChart'
 
-const Line = (): JSX.Element => {
+const Line = (): ReactElement => {
   return (
     <Box m="20px">
     <Header title="Line Chart" subtitle="Simple Line Chart" />

@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { ReactElement, useState } from 'react'
 import FullCalendar, { DateSelectArg, EventApi, EventClickArg, formatDate } from '@fullcalendar/react'
 import dayGridPlugin from '@fullcalendar/daygrid'
 import timeGridPlugin from '@fullcalendar/timegrid'
@@ -30,7 +30,7 @@ const createEventId = (): string => {
 //   allDay: boolean
 // }
 
-const Calendar = (): JSX.Element => {
+const Calendar = (): ReactElement => {
   const theme = useTheme()
   const colors = tokens(theme.palette.mode)
   const [currentEvents, setCurrentEvents] = useState([] as EventApi[])

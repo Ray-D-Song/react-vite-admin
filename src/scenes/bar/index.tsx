@@ -1,9 +1,9 @@
-import React from 'react'
+import React, { ReactElement } from 'react'
 import { Box } from '@mui/material'
 import Header from '../../components/Header'
 import BarChart from '../../components/BarChart'
 
-const Bar = (): JSX.Element => {
+const Bar = (): ReactElement => {
   return (
     <Box m="20px">
       <Header title="Bar Chart" subtitle="Simple Bar Chart" />

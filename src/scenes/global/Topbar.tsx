@@ -1,5 +1,5 @@
 import { Box, IconButton, useTheme } from '@mui/material'
-import React, { Dispatch, SetStateAction, useContext } from 'react'
+import React, { Dispatch, useContext, ReactElement } from 'react'
 import { ColorModeContext, tokens } from '../../theme'
 import InputBase from '@mui/material/InputBase'
 import LightModeOutlinedIcon from '@mui/icons-material/LightModeOutlined'
@@ -10,10 +10,10 @@ import PersonOutlinedIcon from '@mui/icons-material/PersonOutlined'
 import SearchIcon from '@mui/icons-material/Search'
 
 interface TopbarProps {
-  setIsSidebar: Dispatch<SetStateAction<boolean>>
+  setIsSidebar: Dispatch<React.SetStateAction<boolean>>
 }
 
-const Topbar = (props: TopbarProps): JSX.Element => {
+const Topbar = (props: TopbarProps): ReactElement => {
   const theme = useTheme()
   const colors = tokens(theme.palette.mode)
   const colorMode = useContext(ColorModeContext)
@@ -38,12 +38,13 @@ const Topbar = (props: TopbarProps): JSX.Element => {
           {
             theme.palette.mode === 'dark'
               ? (
-              <DarkModeOutlinedIcon />
+                <DarkModeOutlinedIcon />
                 )
               : (
-              <LightModeOutlinedIcon />
+                <LightModeOutlinedIcon />
                 )}
         </IconButton>
+        {theme.palette.mode}
         <IconButton>
           <NotificationsOutlinedIcon />
         </IconButton>

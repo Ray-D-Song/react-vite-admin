@@ -1,10 +1,10 @@
-import React from 'react'
+import React, { ReactElement } from 'react'
 import { ResponsivePie } from '@nivo/pie'
 import { tokens } from '../theme'
 import { useTheme } from '@mui/material'
 import { mockPieData as data } from '../data/mockData'
 
-const PieChart = (): JSX.Element => {
+const PieChart = (): ReactElement => {
   const theme = useTheme()
   const colors = tokens(theme.palette.mode)
 

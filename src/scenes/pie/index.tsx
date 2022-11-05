@@ -1,9 +1,9 @@
-import React from 'react'
+import React, { ReactElement } from 'react'
 import { Box } from '@mui/material'
 import Header from '../../components/Header'
 import PieChart from '../../components/PieChart'
 
-const Pie = (): JSX.Element => {
+const Pie = (): ReactElement => {
   return (
     <Box m="20px">
       <Header title="Pie Chart" subtitle="Simple Pie Chart" />
