@@ -1,5 +1,4 @@
-import { ThemeProvider } from '@emotion/react'
-import { CssBaseline } from '@mui/material'
+import { ThemeProvider, CssBaseline } from '@mui/material'
 import React, { useState, ReactElement } from 'react'
 import Sidebar from './scenes/global/Sidebar'
 import { ColorModeContext, useMode } from './theme'
