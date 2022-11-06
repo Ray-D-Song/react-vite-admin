@@ -8,6 +8,8 @@ import NotificationsOutlinedIcon from '@mui/icons-material/NotificationsOutlined
 import SettingsOutlinedIcon from '@mui/icons-material/SettingsOutlined'
 import PersonOutlinedIcon from '@mui/icons-material/PersonOutlined'
 import SearchIcon from '@mui/icons-material/Search'
+import LanguageIcon from '@mui/icons-material/Language'
+import { useTranslation } from 'react-i18next'
 
 interface TopbarProps {
   setIsSidebar: Dispatch<React.SetStateAction<boolean>>
@@ -17,6 +19,7 @@ const Topbar = (props: TopbarProps): ReactElement => {
   const theme = useTheme()
   const colors = tokens(theme.palette.mode)
   const colorMode = useContext(ColorModeContext)
+  const { t, i18n } = useTranslation()
 
   return (
     <Box display='flex' justifyContent='space-between' p={2}>
@@ -44,7 +47,9 @@ const Topbar = (props: TopbarProps): ReactElement => {
                 <LightModeOutlinedIcon />
                 )}
         </IconButton>
-        {theme.palette.mode}
+        <IconButton onClick={() => i18n.changeLanguage(i18n.language === 'zh_CN' ? 'en' : 'zh_CN')}>
+          <LanguageIcon />
+        </IconButton>
         <IconButton>
           <NotificationsOutlinedIcon />
         </IconButton>

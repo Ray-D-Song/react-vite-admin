@@ -13,16 +13,18 @@ import BarChart from '../../components/BarChart'
 import StatBox from '../../components/StatBox'
 import ProgressCircle from '../../components/ProgressCircle'
 import React, { ReactElement } from 'react'
+import { useTranslation } from 'react-i18next'
 
 const Dashboard = (): ReactElement => {
   const theme = useTheme()
   const colors = tokens(theme.palette.mode)
+  const { t, i18n } = useTranslation()
 
   return (
    <Box m="20px">
       {/* HEADER */}
       <Box display="flex" justifyContent="space-between" alignItems="center">
-        <Header title="DASHBOARD" subtitle="Welcome to your dashboard" />
+        <Header title={t("Dashboard.dashboard")} subtitle={t("Dashboard.welcome")} />
 
         <Box>
           <Button
@@ -35,7 +37,7 @@ const Dashboard = (): ReactElement => {
             }}
           >
             <DownloadOutlinedIcon sx={{ mr: '10px' }} />
-            Download Reports
+            {t("Dashboard.download")}
           </Button>
         </Box>
       </Box>
@@ -57,7 +59,7 @@ const Dashboard = (): ReactElement => {
         >
           <StatBox
             title="12,361"
-            subtitle="Emails Sent"
+            subtitle={t("Dashboard.emailssent")}
             progress={0.75}
             increase="+14%"
             icon={
@@ -76,7 +78,7 @@ const Dashboard = (): ReactElement => {
         >
           <StatBox
             title="431,225"
-            subtitle="Sales Obtained"
+            subtitle={t("Dashboard.obtained")}
             progress={0.50}
             increase="+21%"
             icon={
@@ -95,7 +97,7 @@ const Dashboard = (): ReactElement => {
         >
           <StatBox
             title="32,441"
-            subtitle="New Clients"
+            subtitle={t("Dashboard.newclients")}
             progress={0.30}
             increase="+5%"
             icon={
@@ -114,7 +116,7 @@ const Dashboard = (): ReactElement => {
         >
           <StatBox
             title="1,325,134"
-            subtitle="Traffic Received"
+            subtitle={t("Dashboard.trafficreceived")}
             progress={0.80}
             increase="+43%"
             icon={
@@ -144,7 +146,7 @@ const Dashboard = (): ReactElement => {
                 fontWeight="600"
                 color={colors.grey[100]}
               >
-                Revenue Generated
+                {t("Dashboard.revenuegenerated")}
               </Typography>
               <Typography
                 variant="h3"
@@ -181,7 +183,7 @@ const Dashboard = (): ReactElement => {
             p="15px"
           >
             <Typography color={colors.grey[100]} variant="h5" fontWeight="600">
-              Recent Transactions
+              {t("Dashboard.recenttransactions")}
             </Typography>
           </Box>
           {mockTransactions.map((transaction, i) => (
@@ -225,7 +227,7 @@ const Dashboard = (): ReactElement => {
           p="30px"
         >
           <Typography variant="h5" fontWeight="600">
-            Campaign
+            {t("Dashboard.campaign")}
           </Typography>
           <Box
             display="flex"
@@ -239,9 +241,9 @@ const Dashboard = (): ReactElement => {
               color={colors.greenAccent[500]}
               sx={{ mt: '15px' }}
             >
-              $48,352 revenue generated
+              {t("Dashboard.revenue")}
             </Typography>
-            <Typography>Includes extra misc expenditures and costs</Typography>
+            <Typography>{t("Dashboard.misc")}</Typography>
           </Box>
         </Box>
         <Box
@@ -254,7 +256,7 @@ const Dashboard = (): ReactElement => {
             fontWeight="600"
             sx={{ padding: '30px 30px 0 30px' }}
           >
-            Sales Quantity
+            {t("Dashboard.sales")}
           </Typography>
           <Box height="250px" mt="-20px">
             <BarChart isDashboard={true} />
@@ -271,7 +273,7 @@ const Dashboard = (): ReactElement => {
             fontWeight="600"
             sx={{ marginBottom: '15px' }}
           >
-            Geography Based Traffic
+            {t("Dashboard.based")}
           </Typography>
           <Box height="200px">
             <GeographyChart isDashboard={true} />

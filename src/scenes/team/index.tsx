@@ -7,6 +7,7 @@ import AdminPanelSettingsOutlinedIcon from '@mui/icons-material/AdminPanelSettin
 import LockOpenOutlinedIcon from '@mui/icons-material/LockOpenOutlined'
 import SecurityOutlinedIcon from '@mui/icons-material/SecurityOutlined'
 import Header from '../../components/Header'
+import { useTranslation } from 'react-i18next'
 
 interface RowType {
   row: {
@@ -17,34 +18,33 @@ interface RowType {
 const Team = (): ReactElement => {
   const theme = useTheme()
   const colors = tokens(theme.palette.mode)
+  const { t, i18n } = useTranslation()
   const columns = [
     { field: 'id', headerName: 'ID' },
     {
       field: 'name',
-      headerName: 'Name',
+      headerName: t("Team.name"),
       flex: 1,
       cellClassName: 'name-collumn--cell'
     },
     {
       field: 'age',
-      headerName: 'Age',
+      headerName: t("Team.age"),
       type: 'number'
-      // headerAlign: 'left'
-      // align: 'left'
     },
     {
       field: 'phone',
-      headerName: 'Phone Number',
+      headerName: t("Team.phonenumber"),
       flex: 1
     },
     {
       field: 'email',
-      headerName: 'Email',
+      headerName: t("Team.email"),
       flex: 1
     },
     {
       field: 'accessLevel',
-      headerName: 'Access Level',
+      headerName: t("Team.level"),
       flex: 1,
       renderCell: ({ row: { access } }: RowType) => {
         return (
@@ -77,7 +77,7 @@ const Team = (): ReactElement => {
 
   return (
     <Box m='20px'>
-      <Header title='TEAM' subtitle='Managing the Team Members' />
+      <Header title={t("Team.title")} subtitle={t("Team.subtitle")} />
       <Box
         m='40px 0 0 0'
         height='75vh'

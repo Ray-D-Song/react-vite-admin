@@ -4,48 +4,50 @@ import { DataGrid, GridToolbar } from '@mui/x-data-grid'
 import { tokens } from '../../theme'
 import { mockDataContacts } from '../../data/mockData'
 import Header from '../../components/Header'
+import { useTranslation } from 'react-i18next'
 
 const Contacts = (): ReactElement => {
   const theme = useTheme()
   const colors = tokens(theme.palette.mode)
+  const { t, i18n } = useTranslation()
 
   const columns = [
     { field: 'id', headerName: 'ID', flex: 0.5 },
-    { field: 'registrarId', headerName: 'Registrar ID' },
+    { field: 'registrarId', headerName: t("Contact.registrar") },
     {
       field: 'name',
-      headerName: 'Name',
+      headerName: t("Contact.name"),
       flex: 1,
       cellClassName: 'name-column--cell'
     },
     {
       field: 'age',
-      headerName: 'Age',
+      headerName: t("Contact.age"),
       type: 'number'
     },
     {
       field: 'phone',
-      headerName: 'Phone Number',
+      headerName: t("Contact.phonenumber"),
       flex: 1
     },
     {
       field: 'email',
-      headerName: 'Email',
+      headerName: t("Contact.email"),
       flex: 1
     },
     {
       field: 'address',
-      headerName: 'Address',
+      headerName: t("Contact.address"),
       flex: 1
     },
     {
       field: 'city',
-      headerName: 'City',
+      headerName: t("Contact.city"),
       flex: 1
     },
     {
       field: 'zipCode',
-      headerName: 'Zip Code',
+      headerName: t("Contact.zip"),
       flex: 1
     }
   ]
@@ -53,8 +55,8 @@ const Contacts = (): ReactElement => {
   return (
     <Box m='20px'>
       <Header
-        title='CONTACTS'
-        subtitle='List of Contacts for Future Reference'
+        title={t("Contact.title")}
+        subtitle={t("Contact.subtitle")}
       />
       <Box
         m="40px 0 0 0"

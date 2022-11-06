@@ -3,13 +3,15 @@ import { Box, useTheme } from '@mui/material'
 import GeographyChart from '../../components/GeographyChart'
 import Header from '../../components/Header'
 import { tokens } from '../../theme'
+import { useTranslation } from 'react-i18next'
 
 const Geography = (): ReactElement => {
   const theme = useTheme()
   const colors = tokens(theme.palette.mode)
+  const { t, i18n } = useTranslation()
   return (
     <Box m="20px">
-      <Header title="Geography" subtitle="Simple Geography Chart" />
+      <Header title={t("Geography.title")} subtitle={t("Geography.subtitle")} />
 
       <Box
         height="75vh"

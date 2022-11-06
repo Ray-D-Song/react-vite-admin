@@ -7,13 +7,15 @@ import AccordionDetails from '@mui/material/AccordionDetails'
 import Typography from '@mui/material/Typography'
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
 import { tokens } from '../../theme'
+import { useTranslation } from 'react-i18next'
 
 const FAQ = (): ReactElement => {
   const theme = useTheme()
   const colors = tokens(theme.palette.mode)
+  const { t, i18n } = useTranslation()
   return (
     <Box m='20px'>
-      <Header title='FAQ' subtitle='Frequently Asked Questions Page' />
+      <Header title={t("Faq.title")} subtitle={t("Faq.subtitle")} />
 
       <Accordion defaultExpanded>
         <AccordionSummary expandIcon={<ExpandMoreIcon />}>

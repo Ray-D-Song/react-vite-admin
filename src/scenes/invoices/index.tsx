@@ -4,31 +4,33 @@ import { DataGrid } from '@mui/x-data-grid'
 import { tokens } from '../../theme'
 import { mockDataInvoices } from '../../data/mockData'
 import Header from '../../components/Header'
+import { useTranslation } from 'react-i18next'
 
 const Invoices = (): ReactElement => {
   const theme = useTheme()
   const colors = tokens(theme.palette.mode)
+  const { t, i18n } = useTranslation()
   const columns = [
     { field: 'id', headerName: 'ID' },
     {
       field: 'name',
-      headerName: 'Name',
+      headerName: t("Invoices.name"),
       flex: 1,
       cellClassName: 'name-column--cell'
     },
     {
       field: 'phone',
-      headerName: 'Phone Number',
+      headerName: t("Invoices.phonenumber"),
       flex: 1
     },
     {
       field: 'email',
-      headerName: 'Email',
+      headerName: t("Invoices.email"),
       flex: 1
     },
     {
       field: 'cost',
-      headerName: 'cost',
+      headerName: t("Invoices.cost"),
       flex: 1,
       renderCell: (params: any) => (
         <Typography color={colors.greenAccent[500]}>
@@ -38,14 +40,14 @@ const Invoices = (): ReactElement => {
     },
     {
       field: 'date',
-      headerName: 'Date',
+      headerName: t("Invoices.date"),
       flex: 1
     }
   ]
 
   return (
     <Box m="20px">
-    <Header title="INVOICES" subtitle="List of Invoice Balances" />
+    <Header title={t("Invoices.title")} subtitle={t("Invoices.subtitle")} />
     <Box
       m="40px 0 0 0"
       height="75vh"

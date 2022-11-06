@@ -1,10 +1,10 @@
+import '@fullcalendar/react/dist/vdom'
 import React, { ReactElement, useState } from 'react'
 import FullCalendar, { DateSelectArg, EventApi, EventClickArg, formatDate } from '@fullcalendar/react'
 import dayGridPlugin from '@fullcalendar/daygrid'
 import timeGridPlugin from '@fullcalendar/timegrid'
 import interactionPlugin from '@fullcalendar/interaction'
 import listPlugin from '@fullcalendar/list'
-import '@fullcalendar/react/dist/vdom'
 import {
   Box,
   List,
@@ -15,6 +15,7 @@ import {
 } from '@mui/material'
 import Header from '../../components/Header'
 import { tokens } from '../../theme'
+import { useTranslation } from 'react-i18next'
 
 let eventGuid = 0
 
@@ -22,21 +23,14 @@ const createEventId = (): string => {
   return String(eventGuid++)
 }
 
-// interface EventType {
-//   id: string
-//   title?: string | undefined
-//   start: string
-//   end: string
-//   allDay: boolean
-// }
-
 const Calendar = (): ReactElement => {
   const theme = useTheme()
   const colors = tokens(theme.palette.mode)
   const [currentEvents, setCurrentEvents] = useState([] as EventApi[])
+  const { t, i18n } = useTranslation()
 
   const handleDateSelect = (selectInfo: DateSelectArg): void => {
-    const title = prompt('Please enter a new title for your event')
+    const title = prompt(t("Calendar.prompt"))
     const calendarApi = selectInfo.view.calendar
 
     calendarApi.unselect() // clear date selection
@@ -53,14 +47,14 @@ const Calendar = (): ReactElement => {
   }
 
   const handleEventClick = (clickInfo: EventClickArg): void => {
-    if (confirm(`Are you sure you want to delete the event '${clickInfo.event.title}'`)) {
+    if (confirm(`${t("Calendar.confirm")} '${clickInfo.event.title}'`)) {
       clickInfo.event.remove()
     }
   }
 
   return (
     <Box m='20px'>
-      <Header title='Calender' subtitle='Full Calendar Intercact Page' />
+      <Header title={t("Calendar.title")} subtitle={t("Calendar.subtitle")} />
 
       <Box display='flex' justifyContent='space-between'>
         {/* Calendar Sidebar */}

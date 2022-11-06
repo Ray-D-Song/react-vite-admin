@@ -4,7 +4,7 @@ import { Formik } from 'formik'
 import * as yup from 'yup'
 import useMediaQuery from '@mui/material/useMediaQuery'
 import Header from '../../components/Header'
-
+import { useTranslation } from 'react-i18next'
 const initialValues = {
   firstName: '',
   lastName: '',
@@ -39,6 +39,7 @@ interface ValuesType {
 
 const Form = (): ReactElement => {
   const isNonMobile = useMediaQuery('(min-width: 600px)')
+  const { t, i18n } = useTranslation()
 
   const handleFormSubmit = (values: ValuesType): void => {
     console.log(values)
@@ -46,7 +47,7 @@ const Form = (): ReactElement => {
 
   return (
     <Box m='20px'>
-      <Header title='CREATE USER' subtitle='Create a New User Profile' />
+      <Header title={t("Form.title")} subtitle={t("Form.subtitle")} />
 
       <Formik
         onSubmit={handleFormSubmit}
@@ -74,7 +75,7 @@ const Form = (): ReactElement => {
                 fullWidth
                 variant="filled"
                 type="text"
-                label="First Name"
+                label={t("Form.firstname")}
                 onBlur={handleBlur}
                 onChange={handleChange}
                 value={values.firstName}
@@ -87,7 +88,7 @@ const Form = (): ReactElement => {
                 fullWidth
                 variant="filled"
                 type="text"
-                label="Last Name"
+                label={t("Form.lastname")}
                 onBlur={handleBlur}
                 onChange={handleChange}
                 value={values.lastName}
@@ -100,7 +101,7 @@ const Form = (): ReactElement => {
                 fullWidth
                 variant="filled"
                 type="text"
-                label="Email"
+                label={t("Form.email")}
                 onBlur={handleBlur}
                 onChange={handleChange}
                 value={values.email}
@@ -113,7 +114,7 @@ const Form = (): ReactElement => {
                 fullWidth
                 variant="filled"
                 type="text"
-                label="Contact Number"
+                label={t("Form.contactnumber")}
                 onBlur={handleBlur}
                 onChange={handleChange}
                 value={values.contact}
@@ -126,7 +127,7 @@ const Form = (): ReactElement => {
                 fullWidth
                 variant="filled"
                 type="text"
-                label="Address 1"
+                label={t("Form.address1")}
                 onBlur={handleBlur}
                 onChange={handleChange}
                 value={values.address1}
@@ -139,7 +140,7 @@ const Form = (): ReactElement => {
                 fullWidth
                 variant="filled"
                 type="text"
-                label="Address 2"
+                label={t("Form.address2")}
                 onBlur={handleBlur}
                 onChange={handleChange}
                 value={values.address2}
@@ -151,7 +152,7 @@ const Form = (): ReactElement => {
             </Box>
             <Box display="flex" justifyContent="end" mt="20px">
               <Button type="submit" color="secondary" variant="contained">
-                Create New User
+              {t("Form.button")}
               </Button>
             </Box>
           </form>

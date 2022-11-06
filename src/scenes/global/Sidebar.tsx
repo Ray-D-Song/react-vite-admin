@@ -16,6 +16,7 @@ import PieChartOutlineOutlinedIcon from '@mui/icons-material/PieChartOutlineOutl
 import TimelineOutlinedIcon from '@mui/icons-material/TimelineOutlined'
 import MenuOutlinedIcon from '@mui/icons-material/MenuOutlined'
 import MapOutlinedIcon from '@mui/icons-material/MapOutlined'
+import { useTranslation } from 'react-i18next'
 
 interface ItemProps {
   title: string
@@ -52,6 +53,7 @@ const Sidebar = (props: SidebarProps): ReactElement => {
   const colors = tokens(theme.palette.mode)
   const [isCollapsed, setIsCollapsed] = useState(false)
   const [selected, setSelected] = useState('Dashbord')
+  const { t, i18n } = useTranslation()
   return (
     <Box
       sx={{
@@ -90,7 +92,7 @@ const Sidebar = (props: SidebarProps): ReactElement => {
                 ml="15px"
               >
                 <Typography variant="h3" color={colors.grey[100]}>
-                  ADMINIS
+                  {t("Sidebar.admins")}
                 </Typography>
                 <IconButton onClick={() => setIsCollapsed(!isCollapsed)}>
                   <MenuOutlinedIcon />
@@ -117,10 +119,10 @@ const Sidebar = (props: SidebarProps): ReactElement => {
                   fontWeight='bold'
                   sx={{ m: '10px 0 0 0' }}
                 >
-                  Ed Roh
+                  {t("Sidebar.usrname")}
                 </Typography>
                 <Typography variant="h5" color={colors.greenAccent[500]}>
-                  VP Fancy Admin
+                {t("Sidebar.level")}
                 </Typography>
               </Box>
             </Box>
@@ -128,7 +130,7 @@ const Sidebar = (props: SidebarProps): ReactElement => {
 
           <Box paddingLeft={isCollapsed ? undefined : '10%'}>
             <Item
-              title="Dashboard"
+              title={t("Sidebar.dashboard")}
               to="/"
               icon={<HomeOutlinedIcon />}
               selected={selected}
@@ -140,24 +142,24 @@ const Sidebar = (props: SidebarProps): ReactElement => {
               color={colors.grey[300]}
               sx={{ m: '15px 0 5px 20px' }}
             >
-              Data
+              {t("Sidebar.data")}
             </Typography>
             <Item
-              title="Manage Team"
+              title={t("Sidebar.manageteam")}
               to="/team"
               icon={<PeopleOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
             />
             <Item
-              title="Contacts Information"
+              title={t("Sidebar.contactsinfo")}
               to="/contacts"
               icon={<ContactsOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
             />
             <Item
-              title="Invoices Balances"
+              title={t("Sidebar.invoices")}
               to="/invoices"
               icon={<ReceiptOutlinedIcon />}
               selected={selected}
@@ -169,24 +171,24 @@ const Sidebar = (props: SidebarProps): ReactElement => {
               color={colors.grey[300]}
               sx={{ m: '15px 0 5px 20px' }}
             >
-              Pages
+              {t("Sidebar.pages")}
             </Typography>
             <Item
-              title="Profile Form"
+              title={t("Sidebar.form")}
               to="/form"
               icon={<PersonOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
             />
             <Item
-              title="Calendar"
+              title={t("Sidebar.calendar")}
               to="/calendar"
               icon={<CalendarTodayOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
             />
             <Item
-              title="FAQ Page"
+              title={t("Sidebar.faq")}
               to="/faq"
               icon={<HelpOutlineOutlinedIcon />}
               selected={selected}
@@ -198,31 +200,31 @@ const Sidebar = (props: SidebarProps): ReactElement => {
               color={colors.grey[300]}
               sx={{ m: '15px 0 5px 20px' }}
             >
-              Charts
+             {t("Sidebar.charts")} 
             </Typography>
             <Item
-              title="Bar Chart"
+              title={t("Sidebar.bar")}
               to="/bar"
               icon={<BarChartOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
             />
             <Item
-              title="Pie Chart"
+              title={t("Sidebar.pie")}
               to="/pie"
               icon={<PieChartOutlineOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
             />
             <Item
-              title="Line Chart"
+              title={t("Sidebar.line")}
               to="/line"
               icon={<TimelineOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
             />
             <Item
-              title="Geography Chart"
+              title={t("Sidebar.geography")}
               to="/geography"
               icon={<MapOutlinedIcon />}
               selected={selected}

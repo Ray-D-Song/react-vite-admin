@@ -188,7 +188,7 @@ export const themeSettings = (mode: PaletteMode): any => {
         fontFamily: ['Source Sans Pro', 'sans-serif'].join(','),
         fontSize: 14
       }
-    }
+    },
   }
 }
 
